@@ -1,0 +1,17 @@
+파이썬 코드에서는 MySQL을 활용하기 위해는 'pip install pymysql' cmd에 명령
+
+
+import pymysql
+conn = pymysql.connect (host = 서버IP주소, user = 사용자, password = 암호, db  = 데이터베이스, charset = 문자세트)
+# charset = 'utf8' 한글이 문제 없도록 사용 추천
+
+cur = conn.cursor()
+
+cur.execute ( "CREATE TABLE userTable (id char(4), userName char(15), email char(20), birthYear int)") 
+# 위 형식을 활용하여 데이터 입력
+
+conn.commit() 
+# 임의 저장된 상태를 커밋시켜 확실하게 저장
+
+conn.close() 
+# 연결한 데이터베이스 닫기

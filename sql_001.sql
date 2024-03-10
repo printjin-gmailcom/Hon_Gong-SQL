@@ -1,0 +1,1 @@
+select * from member where member_name = '아이유님' ;
